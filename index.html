@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./assets/parrot.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Translate App</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img class="logo-image" src="assets/parrot.png" />
+      <div>
+        <h1 class="header-text">PollyGlot</h1>
+        <p class="header-desc">Perfect Translation Every Time</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="message-container">
+
+        <div id="setup">
+          <form id="language">
+            <h3 class="label-text">Text to translate</h3>
+            <textarea id="translate-text" placeholder="How are you?" class="message mb" required></textarea>
+            <h3 class="label-text">Select language</h3>
+            <div class="radio-group">
+              <input type="radio" id="french" name="language" checked />
+              <label for="french">French</label>
+              <img src="./assets/fr-flag.png" alt="French Flag">
+            </div>
+            <div class="radio-group">
+              <input type="radio" id="spanish" name="language" />
+              <label for="spanish">Spanish</label>
+              <img src="./assets/sp-flag.png" alt="Spanish Flag">
+            </div>
+            <div class="radio-group mb">
+              <input type="radio" id="japanese" name="language" />
+              <label for="japanese">Japanese</label>
+              <img src="./assets/jpn-flag.png" alt="Japanese Flag">
+            </div>
+            <button class="mb" id="translate">Translate</button>
+          </form>
+        </div>
+
+        <div id="loading">
+
+        </div>
+
+        <div id="result">
+          <h3 class="label-text">Original text</h3>
+          <div id="original-text" class="message mb" required>How are you?</div>
+          <h3 class="label-text">Your translation</h3>
+          <div id="translated-text" class="message mb" required></div>
+          <button id="start-over">Start Over</button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
