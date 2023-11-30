@@ -13,10 +13,10 @@ let textToTranslate
 result.style.display = 'none'
 loading.style.display = 'none'
 
-const openai = new OpenAI({
-  // apiKey: process.env.OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-})
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+//   dangerouslyAllowBrowser: true,
+// })
 
 const messages = [
   {
