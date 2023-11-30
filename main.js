@@ -1,5 +1,5 @@
 import './style.css'
-import OpenAI from 'openai'
+// import OpenAI from 'openai'
 import loader from '/loader.svg'
 
 const loading = document.getElementById('loading')
@@ -34,15 +34,17 @@ async function pingAi(text, language) {
   try {
     const url =
       'https://openai-translate.netlify.app/.netlify/functions/fetchAI'
-    fetch(url, {
+
+    const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'text/plain',
       },
       body: messages,
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
+
+    const data = await res.json()
+    console.log(data)
 
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
