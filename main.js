@@ -32,24 +32,36 @@ async function pingAi(text, language) {
     content: `Translate the following: ${text} into ${language}`,
   })
   try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: messages,
+    const url =
+      'https://openai-translate.netlify.app/.netlify/functions/fetchAI'
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+      body: messages,
     })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+
+    // const response = await openai.chat.completions.create({
+    //   model: 'gpt-3.5-turbo',
+    //   messages: messages,
+    // })
     // messages.push({
     //   role: 'system',
     //   content: response.choices[0].message.content,
     // })
     // console.log(response.choices[0].message.content)
-    console.log(messages)
+    // console.log(messages)
 
-    messageContainer.classList.toggle('min')
-    loading.style.display = 'none'
-    setTimeout(() => {
-      result.style.display = 'block'
-      originalTextBubble.innerText = textToTranslate
-      translatedTextBubble.innerText = response.choices[0].message.content
-    }, 200)
+    // messageContainer.classList.toggle('min')
+    // loading.style.display = 'none'
+    // setTimeout(() => {
+    //   result.style.display = 'block'
+    //   originalTextBubble.innerText = textToTranslate
+    //   translatedTextBubble.innerText = response.choices[0].message.content
+    // }, 200)
   } catch (error) {
     showError(error)
     console.log(messages)
