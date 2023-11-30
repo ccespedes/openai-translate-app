@@ -1,0 +1,1 @@
+Translate app utilizing OpenAI API.

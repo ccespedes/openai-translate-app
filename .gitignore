@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Other files
-.env.js
+/env.js
