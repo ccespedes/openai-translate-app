@@ -43,6 +43,7 @@ button {
   font-weight: 800;
   font-family: inherit;
   background-color: var(--primary);
+  color: #ffffff;
   cursor: pointer;
   margin-top: 0.5em;
   transition: filter 300ms;
