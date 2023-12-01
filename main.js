@@ -29,7 +29,7 @@ const messages = [
 async function pingAi(text, language) {
   messages.push({
     role: 'user',
-    content: `Translate the following: ${text} into ${language}`,
+    content: `Please translate the following: ${text} into ${language}`,
   })
   try {
     const url =
