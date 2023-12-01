@@ -33,7 +33,7 @@ async function pingAi(text, language) {
   // })
   try {
     const url =
-      'https://openai-translate.netlify.app/.netlify/functions/fetchAI'
+      'https://openai-translate.netlify.app/.netlify/functions/fetchAI/fetchAI.js'
 
     const res = await fetch(url, {
       method: 'POST',
