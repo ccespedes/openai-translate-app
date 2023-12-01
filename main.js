@@ -27,10 +27,10 @@ const messages = [
 ]
 
 async function pingAi(text, language) {
-  messages.push({
-    role: 'user',
-    content: `Translate the following: ${text} into ${language}`,
-  })
+  // messages.push({
+  //   role: 'user',
+  //   content: `Translate the following: ${text} into ${language}`,
+  // })
   try {
     const url =
       'https://openai-translate.netlify.app/.netlify/functions/fetchAI'
@@ -40,7 +40,7 @@ async function pingAi(text, language) {
       headers: {
         'Content-Type': 'text/plain',
       },
-      body: messages,
+      body: `Translate the following: ${text} into ${language}`,
     })
 
     const data = await res.json()
