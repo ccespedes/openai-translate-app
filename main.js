@@ -40,11 +40,11 @@ async function pingAi(text, language) {
       headers: {
         'Content-Type': 'text/plain',
       },
-      body: JSON.parse(messages),
+      body: messages,
     })
 
     const data = await res.json()
-    console.log('ddata: ', data)
+    console.log('data: ', data)
 
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
@@ -67,7 +67,7 @@ async function pingAi(text, language) {
   } catch (error) {
     // showError(error)
     // console.log(messages)
-    console.log('eerror: ', error)
+    console.log('error: ', error)
   }
 }
 
