@@ -44,29 +44,30 @@ async function pingAi(text, language) {
     })
 
     const data = await res.json()
-    console.log('data: ', data.reply.choices[0].message.content)
+    const fullReply = data.reply.choices[0].message.content
+    // console.log('data: ', data.reply.choices[0].message.content)
 
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
     //   messages: messages,
     // })
-    // messages.push({
-    //   role: 'system',
-    //   content: response.choices[0].message.content,
-    // })
-    // console.log(response.choices[0].message.content)
-    // console.log(messages)
+    messages.push({
+      role: 'system',
+      content: fullReply,
+    })
+    // console.log(fullReply)
+    console.log(messages)
 
-    // messageContainer.classList.toggle('min')
-    // loading.style.display = 'none'
-    // setTimeout(() => {
-    //   result.style.display = 'block'
-    //   originalTextBubble.innerText = textToTranslate
-    //   translatedTextBubble.innerText = response.choices[0].message.content
-    // }, 200)
+    messageContainer.classList.toggle('min')
+    loading.style.display = 'none'
+    setTimeout(() => {
+      result.style.display = 'block'
+      originalTextBubble.innerText = textToTranslate
+      translatedTextBubble.innerText = fullReply
+    }, 200)
   } catch (error) {
-    // showError(error)
-    // console.log(messages)
+    showError(error)
+    console.log(messages)
     console.log('error: ', error)
   }
 }
