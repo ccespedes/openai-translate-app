@@ -20,7 +20,7 @@ const handler = async (event) => {
     const data = event.body
     return {
       statusCode: 200,
-      body: JSON.stringify({ data }),
+      body: data,
       // body: JSON.stringify({ reply: response.choices[0].message.content }),
     }
   } catch (error) {
