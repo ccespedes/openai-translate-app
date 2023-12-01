@@ -44,7 +44,7 @@ async function pingAi(text, language) {
     })
 
     const data = await res.json()
-    console.log('data: ', data)
+    console.log('ddata: ', data)
 
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
@@ -67,7 +67,7 @@ async function pingAi(text, language) {
   } catch (error) {
     // showError(error)
     // console.log(messages)
-    console.log('error: ', error)
+    console.log('eerror: ', error)
   }
 }
 
