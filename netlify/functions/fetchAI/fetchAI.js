@@ -7,18 +7,17 @@ const openai = new OpenAI({
 
 const handler = async (event) => {
   try {
-    // const response = await openai.chat.completions.create({
-    //   model: 'gpt-3.5-turbo',
-    //   messages: event.body,
-    // })
-
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: event.body,
+    })
     // console.log(response.choices[0].message.content)
     // console.log(messages)
     const data = event.body
     return {
       statusCode: 200,
       body: data,
-      // body: JSON.stringify({ reply: response.choices[0].message.content }),
+      body: JSON.stringify({ reply: response.choices[0].message.content }),
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
