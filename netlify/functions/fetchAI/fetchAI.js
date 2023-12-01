@@ -13,10 +13,8 @@ const handler = async (event) => {
     })
     // console.log(response.choices[0].message.content)
     // console.log(messages)
-    const data = event.body
     return {
       statusCode: 200,
-      body: data,
       body: JSON.stringify({ reply: response.choices[0].message.content }),
     }
   } catch (error) {
