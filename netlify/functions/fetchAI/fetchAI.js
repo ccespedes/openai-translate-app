@@ -6,6 +6,7 @@ const openai = new OpenAI({
 })
 
 const handler = async (event) => {
+  console.log('console from fetchAI:', event.body)
   try {
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
@@ -20,7 +21,7 @@ const handler = async (event) => {
     const data = event.body
     return {
       statusCode: 200,
-      body: data,
+      body: JSON.stringify({ data }),
       // body: JSON.stringify({ reply: response.choices[0].message.content }),
     }
   } catch (error) {
