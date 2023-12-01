@@ -9,7 +9,7 @@ const handler = async (event) => {
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       // messages: messages,
-      prompt: event.body,
+      messages: event.body,
     })
     // messages.push({
     //   role: 'system',
