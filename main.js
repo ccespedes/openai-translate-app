@@ -44,7 +44,7 @@ async function pingAi(text, language) {
     })
 
     const data = await res.json()
-    console.log('data: ', data)
+    console.log('data: ', data.choices[0].message.content)
 
     // const response = await openai.chat.completions.create({
     //   model: 'gpt-3.5-turbo',
