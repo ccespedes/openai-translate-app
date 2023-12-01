@@ -9,7 +9,7 @@ const handler = async (event) => {
   try {
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages: event.body,
+      messages: JSON.parse(event.body),
     })
     // console.log(response.choices[0].message.content)
     // console.log(messages)
