@@ -18,19 +18,19 @@ loading.style.display = 'none'
 //   dangerouslyAllowBrowser: true,
 // })
 
-const messages = [
-  {
-    role: 'system',
-    content:
-      'You are a translator that strictly translates English into another language. Only provide the translation in your response.',
-  },
-]
+// const messages = [
+//   {
+//     role: 'system',
+//     content:
+//       'You are a translator that strictly translates English into another language. Only provide the translation in your response.',
+//   },
+// ]
 
 async function pingAi(text, language) {
-  messages.push({
-    role: 'user',
-    content: `Please translate the following: ${text} into ${language}`,
-  })
+  // messages.push({
+  //   role: 'user',
+  //   content: `Please translate the following: ${text} into ${language}`,
+  // })
   try {
     const url =
       'https://openai-translate.netlify.app/.netlify/functions/fetchAI'
@@ -40,7 +40,7 @@ async function pingAi(text, language) {
       headers: {
         'Content-Type': 'text/plain',
       },
-      body: messages,
+      body: `Translate the following: ${text} into ${language}`,
     })
 
     const data = await res.json()
